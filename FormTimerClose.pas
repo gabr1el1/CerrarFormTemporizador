@@ -16,8 +16,6 @@ type
     procedure FormShow(Sender: TObject);
     procedure tmrTimeOutTimer(Sender: TObject);
     procedure Salir(Sender: TObject);
-    procedure btnNoClick(Sender: TObject);
-    procedure btnYesClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,15 +32,7 @@ implementation
 
 uses FormMain;
 
-procedure TfrmOnTimerClose.btnNoClick(Sender: TObject);
-begin
-  Salir(btnNo);
-end;
 
-procedure TfrmOnTimerClose.btnYesClick(Sender: TObject);
-begin
-  Salir(btnYes);
-end;
 
 procedure TfrmOnTimerClose.FormShow(Sender: TObject);
 begin
@@ -63,14 +53,9 @@ procedure TfrmOnTimerClose.tmrTimeOutTimer(Sender: TObject);
     Salir(btnNo);
   end;
 end;
-procedure TfrmOnTimerClose. Salir(Sender: TObject);
+procedure TfrmOnTimerClose.Salir(Sender: TObject);
 begin
-  // obtener el valor de ModalResult dependiendo de cual
-  // botón se presionó (Yes o No), el boton yes está asociado
-  // con mrClose
   ModalResult := (Sender as TButton).ModalResult;
-  // ESCRIBA ACA SU LÓGICA PARA DECIDIR QUE HACER SI
-  // EL USUARIO PRESIONA EL BOTON SI O EL BOTON NO
   case modalResult of
   mrNo:
   begin
