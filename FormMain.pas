@@ -41,10 +41,7 @@ end;
 
 procedure TfrmMain.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
 begin
-  if(not notShow) then
-  begin
-    frmOnTimerClose.Show;
-  end;
+  frmOnTimerClose.Show;
   CanClose:=CloseOk;
 end;
 

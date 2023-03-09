@@ -58,17 +58,15 @@ begin
   ModalResult := (Sender as TButton).ModalResult;
   case modalResult of
   mrNo:
-  begin
-  frmMain.CloseOk:=false;
-  frmMain.notShow:=false;
-  Close;
-  end;
+    begin
+      frmMain.CloseOk:=false;
+      Close;
+    end;
   mrClose:
-  begin
-  frmMain.CloseOk:=true;
-  frmMain.notShow:=true;
-  frmMain.Close;
-  end;
+    begin
+      frmMain.CloseOk:=true;
+      frmMain.Close;
+    end;
   end;
 
 end;
